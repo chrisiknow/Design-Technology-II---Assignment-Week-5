@@ -1,0 +1,14 @@
+# Pseudocode (structured/organized notes)
+
+Function structureNotes(session_id):
+	notes = loadNotesFromDatabase(session_id)
+	If notes are empty:
+		Return error “No notes available to organize”
+	prompt = createPrompt(notes)
+	Llm_response = callLLM(prompt)
+	If llm_response is valid:
+		saveStructuredOutput(session_id, llm_response)
+		return llm_response
+	Else:
+		Return error “processing failed, try again”
+
